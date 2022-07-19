@@ -1,0 +1,36 @@
+@use 'globals' as g;
+
+@import 'globals';
+@import 'home';
+@import 'carousel';
+@import 'navbar';
+@import 'wines';
+@import 'footer';
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: "Segoe UI", Roboto, Manrope, Arial, sans-serif;
+    cursor: default;
+}
+
+body {
+    background-color: g.$bg;
+}
+
+.container {
+    width: 80%;
+    margin: auto;
+    min-height: calc(100vh - (#{g.$carouselHeight} + #{g.$navbarHeight} + #{g.$footerHeight}));
+}
+
+h1,
+h2,
+h3 {
+    font-weight: normal;
+}
+
+button {
+    cursor: pointer;
+}

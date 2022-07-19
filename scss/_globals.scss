@@ -1,0 +1,23 @@
+$gray: #3C3C3C;
+$yellow: #E2D34B;
+$white: #E4E4E4;
+$bg: #EDEDED;
+
+$navbarHeight: 55px;
+$carouselHeight: 500px;
+$footerHeight: 70px;
+$filterFormHeight: 200px;
+
+@mixin flexCV {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+@mixin flexCH {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}

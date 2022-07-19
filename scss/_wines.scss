@@ -1,0 +1,196 @@
+@use 'globals' as g;
+
+.wines-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    margin-bottom: 100px;
+}
+
+.wine-cards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+
+    .wine-card {
+        background-color: #FFFFFF;
+        border: g.$white solid 2px;
+        border-radius: 20px;
+        margin: 10px;
+        padding: 25px 40px;
+        color: g.$gray;
+        @include g.flexCH();
+        transition-property: transform, background-color;
+        transition: ease-in-out 300ms;
+
+        &:hover {
+            transform: scale(1.05);
+        }
+
+        section {
+            height: 95%;
+            width: 190px;
+            display: flex;
+            flex-direction: column;
+            align-items: normal;
+            justify-content: space-between;
+        }
+
+        img {
+            height: 215px;
+            margin-left: 25px;
+        }
+
+        h3 {
+            font-size: 24px;
+
+            &.long {
+                font-size: 20px;
+            }
+        }
+
+        p {
+            font-size: 18px;
+
+            &:last-child {
+                font-size: 14px;
+            }
+        }
+
+        button {
+            border: none;
+            background-color: g.$yellow;
+            font-size: 14px;
+            border-radius: 20px;
+            height: 40px;
+            width: 100px;
+            transition-property: background-color, transform;
+            transition: ease-in-out 300ms;
+
+            &:hover {
+                background-color: darken(g.$yellow, 10%);
+            }
+
+            &:focus {
+                outline: none;
+            }
+        }
+    }
+}
+
+.filter-container {
+    margin: 50px 0px;
+    @include g.flexCV();
+
+    button {
+        border: 2px g.$yellow solid;
+        border-radius: 20px;
+        height: 40px;
+        width: 100px;
+        background-color: rgba(0, 0, 0, 0);
+        color: g.$gray;
+        font-size: 14px;
+        @include g.flexCH();
+        transition: ease-in-out 500ms background-color;
+
+        &:hover {
+            background-color: #FFFFFF;
+        }
+
+        &:focus {
+            outline: none;
+        }
+
+        p {
+            margin-left: 10px;
+        }
+    }
+
+    form {
+        @include g.flexCV();
+        width: 350px;
+        height: g.$filterFormHeight;
+        z-index: -1;
+
+        input,
+        select {
+            width: 100%;
+            margin-bottom: 10px;
+            padding: 15px 20px;
+            border-radius: 20px;
+            border: g.$white 2px solid;
+
+            &:focus {
+                outline: none;
+            }
+        }
+    }
+}
+
+
+.wine-modal {
+    display: none;
+    padding: 75px 60px 100px 90px;
+    background-color: #FFFFFF;
+    border: solid 2px g.$bg;
+    border-radius: 20px;
+    height: 720px;
+    width: 760px;
+    z-index: 3;
+
+    img {
+        height: 450px;
+        width: auto;
+        margin-left: 60px;
+        align-self: flex-end;
+    }
+
+    &.open {
+        @include g.flexCH();
+        position: fixed;
+        z-index: 2;
+        align-self: center;
+        transform: translateY(-380px);
+    }
+
+    svg {
+        position: fixed;
+        top: 50px;
+        right: 50px;
+    }
+
+    main {
+        width: 60%;
+        height: 100%;
+        color: g.$gray;
+
+        h1 {
+            margin-bottom: 25px;
+            font-size: 48px;
+            line-height: 40px;
+        }
+
+        p {
+            font-size: 24px;
+            line-height: 25px;
+        }
+
+        .justify {
+            text-align: justify;
+            margin-top: 40px;
+            font-size: 18px;
+            line-height: normal;
+        }
+    }
+
+}
+
+.overlay {
+    position: fixed;
+    top: 0px;
+    width: 100vw;
+    height: 100vh;
+    background-color: g.$gray;
+    opacity: 0.75;
+    z-index: 2;
+}

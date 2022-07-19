@@ -1,0 +1,54 @@
+@use 'globals' as g;
+
+.home {
+    @include g.flexCV();
+
+    .row {
+        @include g.flexCH();
+        width: 1144px;
+    }
+
+    .winelist {
+        background: linear-gradient(90deg, (rgba(0,0,0,0)), g.$white, rgba(0,0,0,0));
+        color: g.$gray;
+        padding: 70px 100px;
+        justify-content: space-between;
+        align-items: flex-start;
+    }
+
+    article {
+        padding: 35px 20px 60px 65px;
+
+        &:first-child {
+            padding: 35px 65px 60px 20px;
+        }
+
+        h1 {
+            font-size: 36px;
+            margin-bottom: 35px ;
+        }
+
+        p {
+            font-size: 18px;
+            text-align: justify;
+        }
+    }
+
+    // Next.js Image tags create two additional divs on top of the img tag
+    .row > div {
+        flex-shrink: 0;
+    }
+
+    img {
+        width: 100%;
+    }
+
+    ul {
+        text-align: center;
+        margin-top: 25px;
+
+        li {
+            list-style: none;
+        }
+    }
+}

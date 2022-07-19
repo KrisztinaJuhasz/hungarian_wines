@@ -1,0 +1,30 @@
+@use 'globals' as g;
+
+nav {
+    width: 100%;
+    height: g.$navbarHeight;
+    @include g.flexCH();
+    background-color: g.$gray;
+
+    button {
+        text-decoration: none;
+        color: g.$white;
+        background-color: inherit;
+        border: none;
+        padding: 5px 0px;
+        font-size: 18px;
+
+        &:nth-child(2) {
+            margin: 0px 70px;
+        }
+
+        &.active {
+            color: g.$yellow;
+            border-bottom: g.$yellow 2px solid;
+        }
+
+        &:focus {
+            outline: none;
+        }
+    }
+}

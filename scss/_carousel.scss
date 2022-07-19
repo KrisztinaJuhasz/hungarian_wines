@@ -1,0 +1,7 @@
+@use 'globals' as g;
+
+.carousel-container {
+    height: g.$carouselHeight;
+    @include g.flexCH();
+    background-color: g.$bg;
+}
